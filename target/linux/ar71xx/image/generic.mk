@@ -1208,6 +1208,17 @@ define Device/dap-1330-a1
 endef
 TARGET_DEVICES += dap-1330-a1
 
+define Device/dap-1533-a1
+  DEVICE_TITLE := D-Link DAP-1533 rev. A1
+  DEVICE_PACKAGES := kmod-usb-core kmod-usb2
+  BOARDNAME := DAP-1533-A1
+  SUPPORTED_DEVICES := dap-1533-a1
+  IMAGE_SIZE := 7680k
+  IMAGE/sysupgrade.bin := append-kernel | pad-to 64k | append-rootfs | pad-rootfs | check-size $$$$(IMAGE_SIZE)
+  MTDPARTS := spi0.0:128k(uboot)ro,64k(nvram)ro,7680k(firmware),192k(lang)ro,64k(mac)ro,64k(art)ro
+endef
+TARGET_DEVICES += dap-1533-a1
+
 define Device/dap-2695-a1
   DEVICE_TITLE := D-Link DAP-2695 rev. A1
   DEVICE_PACKAGES := ath10k-firmware-qca988x-ct kmod-ath10k-ct

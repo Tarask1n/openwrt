@@ -171,6 +171,7 @@ get_status_led() {
 		status_led="pcs:amber:power"
 		;;
 	dap-1330-a1|\
+	dap-1533-a1|\
 	dgl-5500-a1|\
 	dhp-1565-a1|\
 	dir-505-a1|\
